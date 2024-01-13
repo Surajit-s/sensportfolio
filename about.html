@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <title>Hacker Portfolio - About Me</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/logo.png" alt="Your Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="about" class="content">
+        <h2>About Me</h2>
+        <p id="about-text"></p>
+    </section>
+
+    <script>
+        const aboutText = "Hello! I'm Surajit, a computer science student based in India with a burning passion for technology. I thrive on the challenges presented by the dynamic world of programming and computing. My journey in the realm of computer science has been an exciting exploration of various domains. I find immense joy in contributing to open source projects, where collaboration and innovation converge. Through my contributions, I aim to not only enhance my skills but also make a positive impact on the larger tech community. Cybersecurity and ethical hacking are areas that particularly captivate my interest. The ever-evolving landscape of digital security motivates me to stay on the cutting edge of knowledge. I believe in the ethical use of hacking skills to strengthen digital defenses and protect the online world. In addition to my academic pursuits, I enjoy the thrill of creating projects that not only solve real-world problems but also push the boundaries of what technology can achieve. My goal is to leverage my skills to contribute meaningfully to the tech industry and society at large. Feel free to explore my portfolio and get in touch if you share similar interests or have exciting collaboration opportunities!";
+        let aboutIndex = 0;
+        const aboutElement = document.getElementById('about-text');
+
+        function typeWriter(element, text, index) {
+            if (index < text.length) {
+                element.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(() => typeWriter(element, text, index), 30);
+            }
+        }
+
+        typeWriter(aboutElement, aboutText, aboutIndex);
+    </script>
+</body>
+</html>

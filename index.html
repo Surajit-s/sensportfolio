@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <title>Hacker Portfolio</title>
+    <style>
+        /* Add the following styles for the monster effect */
+        .monster {
+            display: inline-block;
+            font-size: 50px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .monster:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo monster">
+            <img src="assets/logo.png" alt="Your Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home" class="content">
+        <p class="welcome" id="welcome-message"></p>
+    </section>
+
+    <script>
+        const welcomeMessage = "Welcome to my hacking playground";
+        let welcomeIndex = 0;
+        const welcomeElement = document.getElementById('welcome-message');
+        const enterButton = document.getElementById('enter-button');
+
+        function typeWriter() {
+            if (welcomeIndex < welcomeMessage.length) {
+                welcomeElement.innerHTML += welcomeMessage.charAt(welcomeIndex);
+                welcomeIndex++;
+                setTimeout(typeWriter, 50);
+            } else {
+                enterButton.style.display = 'inline-block';
+            }
+        }
+
+        typeWriter(); // Start the typewriter effect
+        function showContent() {
+            // Show all sections when "Enter" is clicked
+            const sections = document.querySelectorAll('.content');
+            sections.forEach(section => {
+                section.classList.remove('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
